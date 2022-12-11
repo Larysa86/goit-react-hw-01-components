@@ -62,7 +62,7 @@
     margin-bottom: 30px;
 
     border-radius: 50%;
-    background-color: aquamarine;
+    background-color: rgb(69, 77, 74);
 }
 
 .name {
@@ -85,8 +85,8 @@
     display: flex;
     justify-content: space-between;
 
-    background-color: bisque;
-    border-top: 1px solid gray;
+    background-color: rgb(177, 171, 164);
+    border-top: 1px solid rgb(108, 37, 37);
 }
 
 .stats>li {
