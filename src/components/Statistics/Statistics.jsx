@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
-import { getRandomHexColor } from '../../utils/colorSwitcher';
+import { getRandomHexColor } from 'utils/colorSwitcher';
 
 
 
@@ -23,7 +23,7 @@ export const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
     title: PropTypes.string,
-    stats: PropTypes.arrayOf(PropTypes.shape(
+    stats: PropTypes.arrayOf(PropTypes.exact(
         {
             id: PropTypes.string.isRequired,
             label: PropTypes.string.isRequired,
