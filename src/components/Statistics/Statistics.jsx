@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 import { getRandomHexColor } from 'utils/colorSwitcher';
 
-
-
 export const Statistics = ({ title, stats }) => {
   return (
     <section className={css.statistics}>
@@ -11,10 +9,16 @@ export const Statistics = ({ title, stats }) => {
 
       <ul className={css.statList}>
         {stats.map(({ id, label, percentage }) => {
-          return <li key={id} className={css.item} style={{ backgroundColor: getRandomHexColor() }}>
-            <span className={css.label}>{label}</span>
-            <span className={css.percentage}>{percentage}%</span>
-          </li>;
+          return (
+            <li
+              key={id}
+              className={css.item}
+              style={{ backgroundColor: getRandomHexColor() }}
+            >
+              <span className={css.label}>{label}</span>
+              <span className={css.percentage}>{percentage}%</span>
+            </li>
+          );
         })}
       </ul>
     </section>
@@ -23,11 +27,11 @@ export const Statistics = ({ title, stats }) => {
 
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.arrayOf(PropTypes.exact(
-    {
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-    },
-  )),
+    })
+  ),
 };
